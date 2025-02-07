@@ -29,12 +29,12 @@ runs:
         echo "Documentation files are located at ${{ inputs.doc_files_dir }}"
         ls -l && echo "^^^"
         echo $(pwd) && echo "<---"
-        ls -l /home/runner/work/_actions/NovoNordisk-OpenSource/integrity-check/main && echo "####"
+        ls -l /home/runner/work/_actions/NovoNordisk-OpenSource/integrity-check/v1.0.0 && echo "####"
         echo "^^^"
       shell: bash
     - name: Run integrity check
       run: |
         echo "Running integrity check"
-        ACTUAL_DIR=/home/runner/work/_actions/NovoNordisk-OpenSource/integrity-check/main
+        ACTUAL_DIR=/home/runner/work/_actions/NovoNordisk-OpenSource/integrity-check/v1.0.0
         python3 $ACTUAL_DIR/src/main.py ${{ inputs.feature_files_dir }} ${{ inputs.doc_files_dir }}
       shell: bash
